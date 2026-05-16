@@ -1,3 +1,18 @@
+"""
+This module is responsible for building the silver layer of the data warehouse. 
+It connects to the PostgreSQL database, transforms the data from the bronze layer, and inserts the transformed data into the silver layer. 
+The silver layer is designed to be more refined and structured than the bronze layer, making it easier for analysis and reporting. 
+The transformations include cleaning the data, deriving new columns, and ensuring data integrity.
+
+
+Warning:
+- Ensure that the PostgreSQL credentials are correctly set in the environment variables.
+- This code will force to overwrite the existing data in the silver schema.
+"""
+
+
+
+
 import os
 from dotenv import load_dotenv
 import duckdb

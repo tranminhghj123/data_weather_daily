@@ -1,3 +1,19 @@
+"""
+This code defines the bronze layer of the data pipeline, 
+responsible for ingesting raw weather data from Azure Blob Storage and storing it in a PostgreSQL database using DuckDB as an intermediary. 
+The script includes functions to connect to PostgreSQL, read data from Azure Blob Storage, create the necessary table in the bronze schema, 
+and insert the data into that table. The main function orchestrates these steps, ensuring that the bronze layer is built successfully.
+
+
+Warning: 
+- Ensure that the Azure Blob Storage connection string and PostgreSQL credentials are correctly set in the environment variables.
+- The script assumes that the data in Azure Blob Storage is in the expected CSV format.
+- This code will force to overwrite the existing data in the bronze schema. 
+"""
+
+
+
+
 import os
 from dotenv import load_dotenv
 import duckdb

@@ -32,7 +32,7 @@ x-airflow-common: &airflow-common
 
 services:
 
-  # ── PostgreSQL ──────────────────────────────────────────────────────────────
+  # PostgreSQL
   postgres:
     image: postgres:15
     environment:
@@ -52,7 +52,7 @@ services:
     networks:
       - weather_network
 
-  # ── Airflow Webserver ───────────────────────────────────────────────────────
+  # Airflow Webserver 
   airflow-webserver:
     <<: *airflow-common
     command: webserver
@@ -65,7 +65,7 @@ services:
       start_period: 30s
     restart: always
 
-  # ── Airflow Scheduler ───────────────────────────────────────────────────────
+  # Airflow Scheduler
   airflow-scheduler:
     <<: *airflow-common
     command: scheduler
@@ -76,14 +76,14 @@ services:
         condition: service_completed_successfully
     restart: always
 
-  # ── Airflow Init ────────────────────────────────────────────────────────────
+  # Airflow Init
   airflow-init:
     <<: *airflow-common
     command: bash -c "airflow db migrate && airflow users create --username admin --password admin --firstname Admin --lastname User --role Admin --email admin@example.com"
     restart: on-failure
 
 
-  # ── Streamlit ───────────────────────────────────────────────────────────────
+  # Streamlit 
   streamlit:
     build:
       context: .

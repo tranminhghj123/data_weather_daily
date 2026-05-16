@@ -1,3 +1,16 @@
+"""
+This module is responsible for fetching weather data from the Environment Canada API, 
+transforming it into a structured format, and uploading it to Azure Blob Storage as a CSV file. The main steps include:
+1. Fetching weather data from the API
+2. Transforming the data into a structured format
+3. Uploading the transformed data to Azure Blob Storage as a CSV file
+
+
+Warning:
+- Ensure that the Azure Blob Storage connection string and PostgreSQL credentials are correctly set in the environment variables.
+- The script assumes that the data in Azure Blob Storage is in the expected CSV format.
+"""
+
 import requests
 import csv
 import io
@@ -6,7 +19,6 @@ from dotenv import load_dotenv
 from azure.storage.blob import BlobServiceClient
 import requests
 import pandas as pd
-from datetime import datetime, timezone, timedelta
 
 
 load_dotenv()
@@ -28,7 +40,7 @@ def parse_normals(fg: dict) -> dict: # daily normal data
         "normal_low_c":  next((t.get("value", {}).get("en") for t in normals if t.get("class", {}).get("en") == "low"),  None),
     }
 
-# def get_target_periods():
+# def get_target_periods(): feature next day data
 #     # Always looking at tomorrow from UTC midnight perspective
 #     tomorrow       = (datetime.now(timezone.utc) + timedelta(days=1)).strftime("%A")
 #     tomorrow_night = f"{tomorrow} night"

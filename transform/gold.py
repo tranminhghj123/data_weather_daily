@@ -1,3 +1,15 @@
+"""
+This module is responsible for building the gold layer in the data warehouse. 
+The gold layer is the final layer in the data warehouse and is used for reporting and analysis. 
+It contains the cleaned and transformed data that is ready for use by end-users.
+
+Warning: 
+- Ensure that the PostgreSQL credentials are correctly set in the environment variables.
+- This code will force to overwrite the existing data in the gold schema.
+"""
+
+
+
 import duckdb
 import os
 from dotenv import load_dotenv
