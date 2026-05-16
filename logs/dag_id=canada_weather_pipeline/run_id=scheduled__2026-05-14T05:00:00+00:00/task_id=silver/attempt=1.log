@@ -1,0 +1,81 @@
+[2026-05-15T22:52:35.361+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: canada_weather_pipeline.silver scheduled__2026-05-14T05:00:00+00:00 [queued]>
+[2026-05-15T22:52:35.404+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: canada_weather_pipeline.silver scheduled__2026-05-14T05:00:00+00:00 [queued]>
+[2026-05-15T22:52:35.406+0000] {taskinstance.py:2170} INFO - Starting attempt 1 of 2
+[2026-05-15T22:52:35.493+0000] {taskinstance.py:2191} INFO - Executing <Task(PythonOperator): silver> on 2026-05-14 05:00:00+00:00
+[2026-05-15T22:52:35.505+0000] {standard_task_runner.py:60} INFO - Started process 400 to run task
+[2026-05-15T22:52:35.514+0000] {standard_task_runner.py:87} INFO - Running: ['airflow', 'tasks', 'run', 'canada_weather_pipeline', 'silver', 'scheduled__2026-05-14T05:00:00+00:00', '--job-id', '7', '--raw', '--subdir', 'DAGS_FOLDER/dags.py', '--cfg-path', '/tmp/tmph3_ryiep']
+[2026-05-15T22:52:35.519+0000] {standard_task_runner.py:88} INFO - Job 7: Subtask silver
+[2026-05-15T22:52:35.666+0000] {task_command.py:423} INFO - Running <TaskInstance: canada_weather_pipeline.silver scheduled__2026-05-14T05:00:00+00:00 [running]> on host 0cf52aefc126
+[2026-05-15T22:52:36.064+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='Mike' AIRFLOW_CTX_DAG_ID='canada_weather_pipeline' AIRFLOW_CTX_TASK_ID='silver' AIRFLOW_CTX_EXECUTION_DATE='2026-05-14T05:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2026-05-14T05:00:00+00:00'
+[2026-05-15T22:52:36.657+0000] {logging_mixin.py:188} INFO - error to connect duckdb to postgressql{e}
+[2026-05-15T22:52:36.667+0000] {logging_mixin.py:188} INFO - fail to create silver schema or silver.weather_daily table Binder Error: Catalog "pg_db" does not exist!
+[2026-05-15T22:52:36.670+0000] {logging_mixin.py:188} INFO - fail to transform data Binder Error: Catalog "pg_db" does not exist!
+[2026-05-15T22:52:36.672+0000] {logging_mixin.py:188} INFO - fail to insert data {e}
+[2026-05-15T22:52:36.673+0000] {logging_mixin.py:188} INFO - Success build silver layer
+[2026-05-15T22:52:36.717+0000] {python.py:201} INFO - Done. Returned value was: None
+[2026-05-15T22:52:36.832+0000] {taskinstance.py:1138} INFO - Marking task as SUCCESS. dag_id=canada_weather_pipeline, task_id=silver, execution_date=20260514T050000, start_date=20260515T225235, end_date=20260515T225236
+[2026-05-15T22:52:36.927+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 0
+[2026-05-15T22:52:36.999+0000] {taskinstance.py:3280} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2026-05-15T23:15:25.804+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: canada_weather_pipeline.silver scheduled__2026-05-14T05:00:00+00:00 [queued]>
+[2026-05-15T23:15:25.844+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: canada_weather_pipeline.silver scheduled__2026-05-14T05:00:00+00:00 [queued]>
+[2026-05-15T23:15:25.849+0000] {taskinstance.py:2170} INFO - Starting attempt 1 of 2
+[2026-05-15T23:15:25.908+0000] {taskinstance.py:2191} INFO - Executing <Task(PythonOperator): silver> on 2026-05-14 05:00:00+00:00
+[2026-05-15T23:15:25.922+0000] {standard_task_runner.py:60} INFO - Started process 430 to run task
+[2026-05-15T23:15:25.944+0000] {standard_task_runner.py:87} INFO - Running: ['airflow', 'tasks', 'run', 'canada_weather_pipeline', 'silver', 'scheduled__2026-05-14T05:00:00+00:00', '--job-id', '8', '--raw', '--subdir', 'DAGS_FOLDER/dags.py', '--cfg-path', '/tmp/tmp2aq3015z']
+[2026-05-15T23:15:25.967+0000] {standard_task_runner.py:88} INFO - Job 8: Subtask silver
+[2026-05-15T23:15:26.221+0000] {task_command.py:423} INFO - Running <TaskInstance: canada_weather_pipeline.silver scheduled__2026-05-14T05:00:00+00:00 [running]> on host d87b41689c6d
+[2026-05-15T23:15:26.476+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='Mike' AIRFLOW_CTX_DAG_ID='canada_weather_pipeline' AIRFLOW_CTX_TASK_ID='silver' AIRFLOW_CTX_EXECUTION_DATE='2026-05-14T05:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2026-05-14T05:00:00+00:00'
+[2026-05-15T23:15:27.133+0000] {logging_mixin.py:188} INFO - error to connect duckdb to postgressql: IO Error: Unable to connect to Postgres at host=localhost port=5432 dbname=weather_db user=weather_user password=***: connection to server at "localhost" (127.0.0.1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "localhost" (::1), port 5432 failed: Cannot assign requested address
+	Is the server running on that host and accepting TCP/IP connections?
+[2026-05-15T23:15:27.141+0000] {logging_mixin.py:188} INFO - fail to create silver schema or silver.weather_daily table Binder Error: Catalog "pg_db" does not exist!
+[2026-05-15T23:15:27.149+0000] {logging_mixin.py:188} INFO - fail to transform data Binder Error: Catalog "pg_db" does not exist!
+[2026-05-15T23:15:27.150+0000] {logging_mixin.py:188} INFO - fail to insert data {e}
+[2026-05-15T23:15:27.152+0000] {logging_mixin.py:188} INFO - Success build silver layer
+[2026-05-15T23:15:27.156+0000] {python.py:201} INFO - Done. Returned value was: None
+[2026-05-15T23:15:27.200+0000] {taskinstance.py:1138} INFO - Marking task as SUCCESS. dag_id=canada_weather_pipeline, task_id=silver, execution_date=20260514T050000, start_date=20260515T231525, end_date=20260515T231527
+[2026-05-15T23:15:27.271+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 0
+[2026-05-15T23:15:27.346+0000] {taskinstance.py:3280} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2026-05-15T23:44:16.364+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: canada_weather_pipeline.silver scheduled__2026-05-14T05:00:00+00:00 [queued]>
+[2026-05-15T23:44:16.395+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: canada_weather_pipeline.silver scheduled__2026-05-14T05:00:00+00:00 [queued]>
+[2026-05-15T23:44:16.397+0000] {taskinstance.py:2170} INFO - Starting attempt 1 of 2
+[2026-05-15T23:44:16.447+0000] {taskinstance.py:2191} INFO - Executing <Task(PythonOperator): silver> on 2026-05-14 05:00:00+00:00
+[2026-05-15T23:44:16.460+0000] {standard_task_runner.py:60} INFO - Started process 431 to run task
+[2026-05-15T23:44:16.476+0000] {standard_task_runner.py:87} INFO - Running: ['airflow', 'tasks', 'run', 'canada_weather_pipeline', 'silver', 'scheduled__2026-05-14T05:00:00+00:00', '--job-id', '7', '--raw', '--subdir', 'DAGS_FOLDER/dags.py', '--cfg-path', '/tmp/tmpy8f33x9h']
+[2026-05-15T23:44:16.490+0000] {standard_task_runner.py:88} INFO - Job 7: Subtask silver
+[2026-05-15T23:44:16.707+0000] {task_command.py:423} INFO - Running <TaskInstance: canada_weather_pipeline.silver scheduled__2026-05-14T05:00:00+00:00 [running]> on host ce308bb266fe
+[2026-05-15T23:44:16.908+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='Mike' AIRFLOW_CTX_DAG_ID='canada_weather_pipeline' AIRFLOW_CTX_TASK_ID='silver' AIRFLOW_CTX_EXECUTION_DATE='2026-05-14T05:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2026-05-14T05:00:00+00:00'
+[2026-05-15T23:44:17.523+0000] {logging_mixin.py:188} INFO - error to connect duckdb to postgressql: IO Error: Unable to connect to Postgres at host=localhost port=5432 dbname=weather_db user=weather_user password=***: connection to server at "localhost" (127.0.0.1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "localhost" (::1), port 5432 failed: Cannot assign requested address
+	Is the server running on that host and accepting TCP/IP connections?
+[2026-05-15T23:44:17.530+0000] {logging_mixin.py:188} INFO - fail to create silver schema or silver.weather_daily table Binder Error: Catalog "pg_db" does not exist!
+[2026-05-15T23:44:17.535+0000] {logging_mixin.py:188} INFO - fail to transform data Binder Error: Catalog "pg_db" does not exist!
+[2026-05-15T23:44:17.537+0000] {logging_mixin.py:188} INFO - fail to insert data {e}
+[2026-05-15T23:44:17.538+0000] {logging_mixin.py:188} INFO - Success build silver layer
+[2026-05-15T23:44:17.543+0000] {python.py:201} INFO - Done. Returned value was: None
+[2026-05-15T23:44:17.619+0000] {taskinstance.py:1138} INFO - Marking task as SUCCESS. dag_id=canada_weather_pipeline, task_id=silver, execution_date=20260514T050000, start_date=20260515T234416, end_date=20260515T234417
+[2026-05-15T23:44:17.695+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 0
+[2026-05-15T23:44:17.755+0000] {taskinstance.py:3280} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2026-05-15T23:57:00.802+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: canada_weather_pipeline.silver scheduled__2026-05-14T05:00:00+00:00 [queued]>
+[2026-05-15T23:57:00.820+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: canada_weather_pipeline.silver scheduled__2026-05-14T05:00:00+00:00 [queued]>
+[2026-05-15T23:57:00.821+0000] {taskinstance.py:2170} INFO - Starting attempt 1 of 2
+[2026-05-15T23:57:00.846+0000] {taskinstance.py:2191} INFO - Executing <Task(PythonOperator): silver> on 2026-05-14 05:00:00+00:00
+[2026-05-15T23:57:00.853+0000] {standard_task_runner.py:60} INFO - Started process 382 to run task
+[2026-05-15T23:57:00.859+0000] {standard_task_runner.py:87} INFO - Running: ['airflow', 'tasks', 'run', 'canada_weather_pipeline', 'silver', 'scheduled__2026-05-14T05:00:00+00:00', '--job-id', '6', '--raw', '--subdir', 'DAGS_FOLDER/dags.py', '--cfg-path', '/tmp/tmpyht00g70']
+[2026-05-15T23:57:00.864+0000] {standard_task_runner.py:88} INFO - Job 6: Subtask silver
+[2026-05-15T23:57:00.975+0000] {task_command.py:423} INFO - Running <TaskInstance: canada_weather_pipeline.silver scheduled__2026-05-14T05:00:00+00:00 [running]> on host 86ef5fea204b
+[2026-05-15T23:57:01.144+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='Mike' AIRFLOW_CTX_DAG_ID='canada_weather_pipeline' AIRFLOW_CTX_TASK_ID='silver' AIRFLOW_CTX_EXECUTION_DATE='2026-05-14T05:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2026-05-14T05:00:00+00:00'
+[2026-05-15T23:57:01.446+0000] {logging_mixin.py:188} INFO - error to connect duckdb to postgressql: IO Error: Unable to connect to Postgres at host=localhost port=5432 dbname=weather_db user=weather_user password=***: connection to server at "localhost" (127.0.0.1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "localhost" (::1), port 5432 failed: Cannot assign requested address
+	Is the server running on that host and accepting TCP/IP connections?
+[2026-05-15T23:57:01.452+0000] {logging_mixin.py:188} INFO - fail to create silver schema or silver.weather_daily table Binder Error: Catalog "pg_db" does not exist!
+[2026-05-15T23:57:01.454+0000] {logging_mixin.py:188} INFO - fail to transform data Binder Error: Catalog "pg_db" does not exist!
+[2026-05-15T23:57:01.458+0000] {logging_mixin.py:188} INFO - fail to insert data {e}
+[2026-05-15T23:57:01.459+0000] {logging_mixin.py:188} INFO - Success build silver layer
+[2026-05-15T23:57:01.462+0000] {python.py:201} INFO - Done. Returned value was: None
+[2026-05-15T23:57:01.490+0000] {taskinstance.py:1138} INFO - Marking task as SUCCESS. dag_id=canada_weather_pipeline, task_id=silver, execution_date=20260514T050000, start_date=20260515T235700, end_date=20260515T235701
+[2026-05-15T23:57:01.529+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 0
+[2026-05-15T23:57:01.595+0000] {taskinstance.py:3280} INFO - 1 downstream tasks scheduled from follow-on schedule check

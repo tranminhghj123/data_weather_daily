@@ -1,0 +1,20 @@
+[2026-05-16T00:20:16.824+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: canada_weather_pipeline.gold scheduled__2026-05-15T00:00:00+00:00 [queued]>
+[2026-05-16T00:20:16.845+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: canada_weather_pipeline.gold scheduled__2026-05-15T00:00:00+00:00 [queued]>
+[2026-05-16T00:20:16.847+0000] {taskinstance.py:2170} INFO - Starting attempt 1 of 2
+[2026-05-16T00:20:16.882+0000] {taskinstance.py:2191} INFO - Executing <Task(PythonOperator): gold> on 2026-05-15 00:00:00+00:00
+[2026-05-16T00:20:16.898+0000] {standard_task_runner.py:60} INFO - Started process 1152 to run task
+[2026-05-16T00:20:16.910+0000] {standard_task_runner.py:87} INFO - Running: ['airflow', 'tasks', 'run', 'canada_weather_pipeline', 'gold', 'scheduled__2026-05-15T00:00:00+00:00', '--job-id', '17', '--raw', '--subdir', 'DAGS_FOLDER/dags.py', '--cfg-path', '/tmp/tmp2ym1mky7']
+[2026-05-16T00:20:17.146+0000] {standard_task_runner.py:88} INFO - Job 17: Subtask gold
+[2026-05-16T00:20:17.744+0000] {task_command.py:423} INFO - Running <TaskInstance: canada_weather_pipeline.gold scheduled__2026-05-15T00:00:00+00:00 [running]> on host 86ef5fea204b
+[2026-05-16T00:20:18.664+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='Mike' AIRFLOW_CTX_DAG_ID='canada_weather_pipeline' AIRFLOW_CTX_TASK_ID='gold' AIRFLOW_CTX_EXECUTION_DATE='2026-05-15T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2026-05-15T00:00:00+00:00'
+[2026-05-16T00:20:21.217+0000] {logging_mixin.py:188} INFO - successful connect postgressql
+[2026-05-16T00:20:21.263+0000] {logging_mixin.py:188} INFO - failt to build gold {e} 
+[2026-05-16T00:20:22.186+0000] {logging_mixin.py:188} INFO - Success to insert data into weather table
+[2026-05-16T00:20:22.199+0000] {logging_mixin.py:188} INFO - Success to insert data to day table
+[2026-05-16T00:20:22.286+0000] {logging_mixin.py:188} INFO - Success to insert data to night table
+[2026-05-16T00:20:22.299+0000] {logging_mixin.py:188} INFO - Success to insert data to difference table
+[2026-05-16T00:20:22.302+0000] {logging_mixin.py:188} INFO - Successful build gold layer
+[2026-05-16T00:20:22.305+0000] {python.py:201} INFO - Done. Returned value was: None
+[2026-05-16T00:20:22.330+0000] {taskinstance.py:1138} INFO - Marking task as SUCCESS. dag_id=canada_weather_pipeline, task_id=gold, execution_date=20260515T000000, start_date=20260516T002016, end_date=20260516T002022
+[2026-05-16T00:20:22.410+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 0
+[2026-05-16T00:20:22.455+0000] {taskinstance.py:3280} INFO - 0 downstream tasks scheduled from follow-on schedule check

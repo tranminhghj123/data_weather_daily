@@ -1,0 +1,49 @@
+[2026-05-16T00:12:33.024+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: canada_weather_pipeline.bronze manual__2026-05-16T00:12:08.163781+00:00 [queued]>
+[2026-05-16T00:12:33.051+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: canada_weather_pipeline.bronze manual__2026-05-16T00:12:08.163781+00:00 [queued]>
+[2026-05-16T00:12:33.052+0000] {taskinstance.py:2170} INFO - Starting attempt 1 of 2
+[2026-05-16T00:12:33.117+0000] {taskinstance.py:2191} INFO - Executing <Task(PythonOperator): bronze> on 2026-05-16 00:12:08.163781+00:00
+[2026-05-16T00:12:33.140+0000] {standard_task_runner.py:60} INFO - Started process 801 to run task
+[2026-05-16T00:12:33.150+0000] {standard_task_runner.py:87} INFO - Running: ['airflow', 'tasks', 'run', 'canada_weather_pipeline', 'bronze', 'manual__2026-05-16T00:12:08.163781+00:00', '--job-id', '11', '--raw', '--subdir', 'DAGS_FOLDER/dags.py', '--cfg-path', '/tmp/tmpldw410xg']
+[2026-05-16T00:12:33.158+0000] {standard_task_runner.py:88} INFO - Job 11: Subtask bronze
+[2026-05-16T00:12:33.323+0000] {task_command.py:423} INFO - Running <TaskInstance: canada_weather_pipeline.bronze manual__2026-05-16T00:12:08.163781+00:00 [running]> on host 86ef5fea204b
+[2026-05-16T00:12:33.530+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='Mike' AIRFLOW_CTX_DAG_ID='canada_weather_pipeline' AIRFLOW_CTX_TASK_ID='bronze' AIRFLOW_CTX_EXECUTION_DATE='2026-05-16T00:12:08.163781+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2026-05-16T00:12:08.163781+00:00'
+[2026-05-16T00:12:43.986+0000] {logging_mixin.py:188} INFO - ✓ Connected to PostgreSQL
+[2026-05-16T00:12:44.017+0000] {_universal.py:514} INFO - Request URL: 'https://weather12.blob.core.windows.net/daily/daily_weather.csv'
+Request method: 'GET'
+Request headers:
+    'x-ms-range': 'REDACTED'
+    'x-ms-version': 'REDACTED'
+    'Accept': 'application/xml'
+    'User-Agent': 'azsdk-python-storage-blob/12.19.0 Python/3.11.8 (Linux-6.4.16-linuxkit-x86_64-with-glibc2.36)'
+    'x-ms-date': 'REDACTED'
+    'x-ms-client-request-id': 'f5eb9c96-50bb-11f1-861d-0242ac1f0005'
+    'Authorization': 'REDACTED'
+No body was attached to the request
+[2026-05-16T00:12:45.006+0000] {_universal.py:550} INFO - Response status: 206
+Response headers:
+    'Content-Length': '122027'
+    'Content-Type': 'application/octet-stream'
+    'Content-Range': 'REDACTED'
+    'Last-Modified': 'Sat, 16 May 2026 00:12:31 GMT'
+    'Accept-Ranges': 'REDACTED'
+    'ETag': '"0x8DEB2DFD2C68812"'
+    'x-ms-request-id': '1b980940-701e-0050-41c8-e48f94000000'
+    'x-ms-client-request-id': 'f5eb9c96-50bb-11f1-861d-0242ac1f0005'
+    'x-ms-version': 'REDACTED'
+    'x-ms-creation-time': 'REDACTED'
+    'x-ms-blob-content-md5': 'REDACTED'
+    'x-ms-lease-status': 'REDACTED'
+    'x-ms-lease-state': 'REDACTED'
+    'x-ms-blob-type': 'REDACTED'
+    'x-ms-server-encrypted': 'REDACTED'
+    'x-ms-access-tier': 'REDACTED'
+    'x-ms-access-tier-inferred': 'REDACTED'
+    'Date': 'Sat, 16 May 2026 00:12:44 GMT'
+[2026-05-16T00:12:45.227+0000] {logging_mixin.py:188} INFO - ✓ Read 840 rows from Azure Blob
+[2026-05-16T00:12:45.622+0000] {logging_mixin.py:188} INFO - ✓ Bronze table ready
+[2026-05-16T00:12:45.869+0000] {logging_mixin.py:188} INFO - ✓ Inserted 840 rows into bronze.weather_daily
+[2026-05-16T00:12:45.871+0000] {logging_mixin.py:188} INFO - ✓ Bronze layer built successfully
+[2026-05-16T00:12:45.877+0000] {python.py:201} INFO - Done. Returned value was: None
+[2026-05-16T00:12:45.927+0000] {taskinstance.py:1138} INFO - Marking task as SUCCESS. dag_id=canada_weather_pipeline, task_id=bronze, execution_date=20260516T001208, start_date=20260516T001233, end_date=20260516T001245
+[2026-05-16T00:12:46.033+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 0
+[2026-05-16T00:12:46.155+0000] {taskinstance.py:3280} INFO - 1 downstream tasks scheduled from follow-on schedule check

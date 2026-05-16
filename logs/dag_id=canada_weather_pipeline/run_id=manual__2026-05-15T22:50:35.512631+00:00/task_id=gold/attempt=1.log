@@ -1,0 +1,20 @@
+[2026-05-15T22:52:38.616+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: canada_weather_pipeline.gold manual__2026-05-15T22:50:35.512631+00:00 [queued]>
+[2026-05-15T22:52:38.641+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: canada_weather_pipeline.gold manual__2026-05-15T22:50:35.512631+00:00 [queued]>
+[2026-05-15T22:52:38.642+0000] {taskinstance.py:2170} INFO - Starting attempt 1 of 2
+[2026-05-15T22:52:38.671+0000] {taskinstance.py:2191} INFO - Executing <Task(PythonOperator): gold> on 2026-05-15 22:50:35.512631+00:00
+[2026-05-15T22:52:38.682+0000] {standard_task_runner.py:60} INFO - Started process 499 to run task
+[2026-05-15T22:52:38.690+0000] {standard_task_runner.py:87} INFO - Running: ['airflow', 'tasks', 'run', 'canada_weather_pipeline', 'gold', 'manual__2026-05-15T22:50:35.512631+00:00', '--job-id', '8', '--raw', '--subdir', 'DAGS_FOLDER/dags.py', '--cfg-path', '/tmp/tmpn7t_hfr3']
+[2026-05-15T22:52:38.694+0000] {standard_task_runner.py:88} INFO - Job 8: Subtask gold
+[2026-05-15T22:52:38.816+0000] {task_command.py:423} INFO - Running <TaskInstance: canada_weather_pipeline.gold manual__2026-05-15T22:50:35.512631+00:00 [running]> on host 0cf52aefc126
+[2026-05-15T22:52:39.018+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='Mike' AIRFLOW_CTX_DAG_ID='canada_weather_pipeline' AIRFLOW_CTX_TASK_ID='gold' AIRFLOW_CTX_EXECUTION_DATE='2026-05-15T22:50:35.512631+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2026-05-15T22:50:35.512631+00:00'
+[2026-05-15T22:52:39.527+0000] {logging_mixin.py:188} INFO - error to connect duckdb to postgressql{e}
+[2026-05-15T22:52:39.536+0000] {logging_mixin.py:188} INFO - failt to build gold {e} 
+[2026-05-15T22:52:39.543+0000] {logging_mixin.py:188} INFO - fail to insert data into weather table 
+[2026-05-15T22:52:39.549+0000] {logging_mixin.py:188} INFO - fail to insert data into day table Binder Error: Catalog "pg_db" does not exist!
+[2026-05-15T22:52:39.551+0000] {logging_mixin.py:188} INFO - fail to insert data into night table Binder Error: Catalog "pg_db" does not exist!
+[2026-05-15T22:52:39.552+0000] {logging_mixin.py:188} INFO - fail to insert data into table difference Binder Error: Catalog "pg_db" does not exist!
+[2026-05-15T22:52:39.553+0000] {logging_mixin.py:188} INFO - Successful build gold layer
+[2026-05-15T22:52:39.557+0000] {python.py:201} INFO - Done. Returned value was: None
+[2026-05-15T22:52:39.614+0000] {taskinstance.py:1138} INFO - Marking task as SUCCESS. dag_id=canada_weather_pipeline, task_id=gold, execution_date=20260515T225035, start_date=20260515T225238, end_date=20260515T225239
+[2026-05-15T22:52:39.967+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 0
+[2026-05-15T22:52:40.207+0000] {taskinstance.py:3280} INFO - 0 downstream tasks scheduled from follow-on schedule check

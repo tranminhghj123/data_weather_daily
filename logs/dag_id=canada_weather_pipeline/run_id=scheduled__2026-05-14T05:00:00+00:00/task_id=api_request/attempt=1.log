@@ -1,0 +1,248 @@
+[2026-05-15T22:50:40.914+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: canada_weather_pipeline.api_request scheduled__2026-05-14T05:00:00+00:00 [queued]>
+[2026-05-15T22:50:40.935+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: canada_weather_pipeline.api_request scheduled__2026-05-14T05:00:00+00:00 [queued]>
+[2026-05-15T22:50:40.936+0000] {taskinstance.py:2170} INFO - Starting attempt 1 of 2
+[2026-05-15T22:50:40.968+0000] {taskinstance.py:2191} INFO - Executing <Task(PythonOperator): api_request> on 2026-05-14 05:00:00+00:00
+[2026-05-15T22:50:40.984+0000] {standard_task_runner.py:60} INFO - Started process 193 to run task
+[2026-05-15T22:50:41.013+0000] {standard_task_runner.py:87} INFO - Running: ['airflow', 'tasks', 'run', 'canada_weather_pipeline', 'api_request', 'scheduled__2026-05-14T05:00:00+00:00', '--job-id', '3', '--raw', '--subdir', 'DAGS_FOLDER/dags.py', '--cfg-path', '/tmp/tmp4ponw3mr']
+[2026-05-15T22:50:41.072+0000] {standard_task_runner.py:88} INFO - Job 3: Subtask api_request
+[2026-05-15T22:50:42.138+0000] {task_command.py:423} INFO - Running <TaskInstance: canada_weather_pipeline.api_request scheduled__2026-05-14T05:00:00+00:00 [running]> on host 0cf52aefc126
+[2026-05-15T22:50:44.903+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='Mike' AIRFLOW_CTX_DAG_ID='canada_weather_pipeline' AIRFLOW_CTX_TASK_ID='api_request' AIRFLOW_CTX_EXECUTION_DATE='2026-05-14T05:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2026-05-14T05:00:00+00:00'
+[2026-05-15T22:51:09.940+0000] {logging_mixin.py:188} INFO - Fetching 2000 cities...
+[2026-05-15T22:51:55.552+0000] {logging_mixin.py:188} INFO - Total cities available : 844
+[2026-05-15T22:51:55.559+0000] {logging_mixin.py:188} INFO - Fetched this call      : 844
+[2026-05-15T22:51:57.229+0000] {logging_mixin.py:188} INFO - city                0
+identifier          0
+region              1
+last_updated        0
+sunrise             0
+sunset              0
+normal_high_c       1
+normal_low_c        1
+period              0
+temp_c              0
+temp_class          0
+humidity_pct        0
+wind_chill        795
+uv_index          840
+uv_category       840
+precip_mm         763
+precip_type       763
+wind_speed_kmh      0
+wind_gust_kmh       8
+dtype: int64
+[2026-05-15T22:51:57.321+0000] {_universal.py:511} INFO - Request URL: 'https://weather12.blob.core.windows.net/daily/daily_weather.csv'
+Request method: 'PUT'
+Request headers:
+    'Content-Length': '132026'
+    'x-ms-blob-type': 'REDACTED'
+    'x-ms-version': 'REDACTED'
+    'Content-Type': 'application/octet-stream'
+    'Accept': 'application/xml'
+    'User-Agent': 'azsdk-python-storage-blob/12.19.0 Python/3.11.8 (Linux-6.4.16-linuxkit-x86_64-with-glibc2.36)'
+    'x-ms-date': 'REDACTED'
+    'x-ms-client-request-id': 'ad10576a-50b0-11f1-873f-0242ac1c0005'
+    'Authorization': 'REDACTED'
+A body is sent with the request
+[2026-05-15T22:51:58.080+0000] {_universal.py:550} INFO - Response status: 201
+Response headers:
+    'Content-Length': '0'
+    'Content-MD5': 'REDACTED'
+    'Last-Modified': 'Fri, 15 May 2026 22:51:58 GMT'
+    'ETag': '"0x8DEB2D491B9232E"'
+    'x-ms-request-id': '008ea7fb-001e-00ae-7fbd-e4e0d5000000'
+    'x-ms-client-request-id': 'ad10576a-50b0-11f1-873f-0242ac1c0005'
+    'x-ms-version': 'REDACTED'
+    'x-ms-content-crc64': 'REDACTED'
+    'x-ms-request-server-encrypted': 'REDACTED'
+    'Date': 'Fri, 15 May 2026 22:51:57 GMT'
+[2026-05-15T22:51:58.084+0000] {logging_mixin.py:188} INFO - Uploaded to Azure Blob: daily/daily_weather.csv
+[2026-05-15T22:51:58.155+0000] {python.py:201} INFO - Done. Returned value was: None
+[2026-05-15T22:51:58.226+0000] {taskinstance.py:1138} INFO - Marking task as SUCCESS. dag_id=canada_weather_pipeline, task_id=api_request, execution_date=20260514T050000, start_date=20260515T225040, end_date=20260515T225158
+[2026-05-15T22:51:58.351+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 0
+[2026-05-15T22:51:58.518+0000] {taskinstance.py:3280} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2026-05-15T23:14:24.284+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: canada_weather_pipeline.api_request scheduled__2026-05-14T05:00:00+00:00 [queued]>
+[2026-05-15T23:14:24.316+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: canada_weather_pipeline.api_request scheduled__2026-05-14T05:00:00+00:00 [queued]>
+[2026-05-15T23:14:24.318+0000] {taskinstance.py:2170} INFO - Starting attempt 1 of 2
+[2026-05-15T23:14:24.764+0000] {taskinstance.py:2191} INFO - Executing <Task(PythonOperator): api_request> on 2026-05-14 05:00:00+00:00
+[2026-05-15T23:14:24.969+0000] {standard_task_runner.py:60} INFO - Started process 178 to run task
+[2026-05-15T23:14:25.313+0000] {standard_task_runner.py:87} INFO - Running: ['airflow', 'tasks', 'run', 'canada_weather_pipeline', 'api_request', 'scheduled__2026-05-14T05:00:00+00:00', '--job-id', '3', '--raw', '--subdir', 'DAGS_FOLDER/dags.py', '--cfg-path', '/tmp/tmpgy_zhg0h']
+[2026-05-15T23:14:25.345+0000] {standard_task_runner.py:88} INFO - Job 3: Subtask api_request
+[2026-05-15T23:14:26.021+0000] {task_command.py:423} INFO - Running <TaskInstance: canada_weather_pipeline.api_request scheduled__2026-05-14T05:00:00+00:00 [running]> on host d87b41689c6d
+[2026-05-15T23:14:26.626+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='Mike' AIRFLOW_CTX_DAG_ID='canada_weather_pipeline' AIRFLOW_CTX_TASK_ID='api_request' AIRFLOW_CTX_EXECUTION_DATE='2026-05-14T05:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2026-05-14T05:00:00+00:00'
+[2026-05-15T23:14:29.771+0000] {logging_mixin.py:188} INFO - Fetching 2000 cities...
+[2026-05-15T23:14:52.371+0000] {logging_mixin.py:188} INFO - Total cities available : 844
+[2026-05-15T23:14:52.401+0000] {logging_mixin.py:188} INFO - Fetched this call      : 844
+[2026-05-15T23:14:54.388+0000] {logging_mixin.py:188} INFO - city                0
+identifier          0
+region              1
+last_updated        0
+sunrise             0
+sunset              0
+normal_high_c       1
+normal_low_c        1
+period              0
+temp_c              0
+temp_class          0
+humidity_pct        0
+wind_chill        728
+uv_index          840
+uv_category       840
+precip_mm         731
+precip_type       731
+wind_speed_kmh      0
+wind_gust_kmh       4
+dtype: int64
+[2026-05-15T23:14:54.452+0000] {_universal.py:511} INFO - Request URL: 'https://weather12.blob.core.windows.net/daily/daily_weather.csv'
+Request method: 'PUT'
+Request headers:
+    'Content-Length': '122027'
+    'x-ms-blob-type': 'REDACTED'
+    'x-ms-version': 'REDACTED'
+    'Content-Type': 'application/octet-stream'
+    'Accept': 'application/xml'
+    'User-Agent': 'azsdk-python-storage-blob/12.19.0 Python/3.11.8 (Linux-6.4.16-linuxkit-x86_64-with-glibc2.36)'
+    'x-ms-date': 'REDACTED'
+    'x-ms-client-request-id': 'e1e584d0-50b3-11f1-8ee8-0242ac1d0005'
+    'Authorization': 'REDACTED'
+A body is sent with the request
+[2026-05-15T23:14:55.335+0000] {_universal.py:550} INFO - Response status: 201
+Response headers:
+    'Content-Length': '0'
+    'Content-MD5': 'REDACTED'
+    'Last-Modified': 'Fri, 15 May 2026 23:14:55 GMT'
+    'ETag': '"0x8DEB2D7C6B553CE"'
+    'x-ms-request-id': '0ab1f9b7-d01e-0076-5fc0-e4c78c000000'
+    'x-ms-client-request-id': 'e1e584d0-50b3-11f1-8ee8-0242ac1d0005'
+    'x-ms-version': 'REDACTED'
+    'x-ms-content-crc64': 'REDACTED'
+    'x-ms-request-server-encrypted': 'REDACTED'
+    'Date': 'Fri, 15 May 2026 23:14:55 GMT'
+[2026-05-15T23:14:55.345+0000] {logging_mixin.py:188} INFO - Uploaded to Azure Blob: daily/daily_weather.csv
+[2026-05-15T23:14:55.436+0000] {python.py:201} INFO - Done. Returned value was: None
+[2026-05-15T23:14:55.520+0000] {taskinstance.py:1138} INFO - Marking task as SUCCESS. dag_id=canada_weather_pipeline, task_id=api_request, execution_date=20260514T050000, start_date=20260515T231424, end_date=20260515T231455
+[2026-05-15T23:14:55.743+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 0
+[2026-05-15T23:14:55.953+0000] {taskinstance.py:3280} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2026-05-15T23:42:51.069+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: canada_weather_pipeline.api_request scheduled__2026-05-14T05:00:00+00:00 [queued]>
+[2026-05-15T23:42:51.144+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: canada_weather_pipeline.api_request scheduled__2026-05-14T05:00:00+00:00 [queued]>
+[2026-05-15T23:42:51.152+0000] {taskinstance.py:2170} INFO - Starting attempt 1 of 2
+[2026-05-15T23:42:51.261+0000] {taskinstance.py:2191} INFO - Executing <Task(PythonOperator): api_request> on 2026-05-14 05:00:00+00:00
+[2026-05-15T23:42:51.287+0000] {standard_task_runner.py:60} INFO - Started process 176 to run task
+[2026-05-15T23:42:51.319+0000] {standard_task_runner.py:87} INFO - Running: ['airflow', 'tasks', 'run', 'canada_weather_pipeline', 'api_request', 'scheduled__2026-05-14T05:00:00+00:00', '--job-id', '3', '--raw', '--subdir', 'DAGS_FOLDER/dags.py', '--cfg-path', '/tmp/tmp_j4nxflm']
+[2026-05-15T23:42:51.342+0000] {standard_task_runner.py:88} INFO - Job 3: Subtask api_request
+[2026-05-15T23:42:52.233+0000] {task_command.py:423} INFO - Running <TaskInstance: canada_weather_pipeline.api_request scheduled__2026-05-14T05:00:00+00:00 [running]> on host ce308bb266fe
+[2026-05-15T23:42:53.076+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='Mike' AIRFLOW_CTX_DAG_ID='canada_weather_pipeline' AIRFLOW_CTX_TASK_ID='api_request' AIRFLOW_CTX_EXECUTION_DATE='2026-05-14T05:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2026-05-14T05:00:00+00:00'
+[2026-05-15T23:42:57.424+0000] {logging_mixin.py:188} INFO - Fetching 2000 cities...
+[2026-05-15T23:43:40.387+0000] {logging_mixin.py:188} INFO - Total cities available : 844
+[2026-05-15T23:43:40.410+0000] {logging_mixin.py:188} INFO - Fetched this call      : 844
+[2026-05-15T23:43:42.490+0000] {logging_mixin.py:188} INFO - city                0
+identifier          0
+region              1
+last_updated        0
+sunrise             0
+sunset              0
+normal_high_c       1
+normal_low_c        1
+period              0
+temp_c              0
+temp_class          0
+humidity_pct        0
+wind_chill        728
+uv_index          840
+uv_category       840
+precip_mm         731
+precip_type       731
+wind_speed_kmh      0
+wind_gust_kmh       4
+dtype: int64
+[2026-05-15T23:43:42.514+0000] {_universal.py:511} INFO - Request URL: 'https://weather12.blob.core.windows.net/daily/daily_weather.csv'
+Request method: 'PUT'
+Request headers:
+    'Content-Length': '122027'
+    'x-ms-blob-type': 'REDACTED'
+    'x-ms-version': 'REDACTED'
+    'Content-Type': 'application/octet-stream'
+    'Accept': 'application/xml'
+    'User-Agent': 'azsdk-python-storage-blob/12.19.0 Python/3.11.8 (Linux-6.4.16-linuxkit-x86_64-with-glibc2.36)'
+    'x-ms-date': 'REDACTED'
+    'x-ms-client-request-id': 'e7e7455e-50b7-11f1-84a7-0242ac1e0005'
+    'Authorization': 'REDACTED'
+A body is sent with the request
+[2026-05-15T23:43:44.532+0000] {_universal.py:550} INFO - Response status: 201
+Response headers:
+    'Content-Length': '0'
+    'Content-MD5': 'REDACTED'
+    'Last-Modified': 'Fri, 15 May 2026 23:43:44 GMT'
+    'ETag': '"0x8DEB2DBCD29D089"'
+    'x-ms-request-id': 'eed0fab2-c01e-00a1-72c4-e496b9000000'
+    'x-ms-client-request-id': 'e7e7455e-50b7-11f1-84a7-0242ac1e0005'
+    'x-ms-version': 'REDACTED'
+    'x-ms-content-crc64': 'REDACTED'
+    'x-ms-request-server-encrypted': 'REDACTED'
+    'Date': 'Fri, 15 May 2026 23:43:43 GMT'
+[2026-05-15T23:43:44.544+0000] {logging_mixin.py:188} INFO - Uploaded to Azure Blob: daily/daily_weather.csv
+[2026-05-15T23:43:44.701+0000] {python.py:201} INFO - Done. Returned value was: None
+[2026-05-15T23:43:44.863+0000] {taskinstance.py:1138} INFO - Marking task as SUCCESS. dag_id=canada_weather_pipeline, task_id=api_request, execution_date=20260514T050000, start_date=20260515T234251, end_date=20260515T234344
+[2026-05-15T23:43:45.019+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 0
+[2026-05-15T23:43:45.428+0000] {taskinstance.py:3280} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2026-05-15T23:55:18.641+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: canada_weather_pipeline.api_request scheduled__2026-05-14T05:00:00+00:00 [queued]>
+[2026-05-15T23:55:18.662+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: canada_weather_pipeline.api_request scheduled__2026-05-14T05:00:00+00:00 [queued]>
+[2026-05-15T23:55:18.663+0000] {taskinstance.py:2170} INFO - Starting attempt 1 of 2
+[2026-05-15T23:55:18.694+0000] {taskinstance.py:2191} INFO - Executing <Task(PythonOperator): api_request> on 2026-05-14 05:00:00+00:00
+[2026-05-15T23:55:18.705+0000] {standard_task_runner.py:60} INFO - Started process 177 to run task
+[2026-05-15T23:55:18.713+0000] {standard_task_runner.py:87} INFO - Running: ['airflow', 'tasks', 'run', 'canada_weather_pipeline', 'api_request', 'scheduled__2026-05-14T05:00:00+00:00', '--job-id', '2', '--raw', '--subdir', 'DAGS_FOLDER/dags.py', '--cfg-path', '/tmp/tmpdstj0j34']
+[2026-05-15T23:55:18.733+0000] {standard_task_runner.py:88} INFO - Job 2: Subtask api_request
+[2026-05-15T23:55:19.057+0000] {task_command.py:423} INFO - Running <TaskInstance: canada_weather_pipeline.api_request scheduled__2026-05-14T05:00:00+00:00 [running]> on host 86ef5fea204b
+[2026-05-15T23:55:19.425+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='Mike' AIRFLOW_CTX_DAG_ID='canada_weather_pipeline' AIRFLOW_CTX_TASK_ID='api_request' AIRFLOW_CTX_EXECUTION_DATE='2026-05-14T05:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2026-05-14T05:00:00+00:00'
+[2026-05-15T23:55:22.615+0000] {logging_mixin.py:188} INFO - Fetching 2000 cities...
+[2026-05-15T23:56:19.358+0000] {logging_mixin.py:188} INFO - Total cities available : 844
+[2026-05-15T23:56:19.408+0000] {logging_mixin.py:188} INFO - Fetched this call      : 844
+[2026-05-15T23:56:26.768+0000] {logging_mixin.py:188} INFO - city                0
+identifier          0
+region              1
+last_updated        0
+sunrise             0
+sunset              0
+normal_high_c       1
+normal_low_c        1
+period              0
+temp_c              0
+temp_class          0
+humidity_pct        0
+wind_chill        728
+uv_index          840
+uv_category       840
+precip_mm         731
+precip_type       731
+wind_speed_kmh      0
+wind_gust_kmh       4
+dtype: int64
+[2026-05-15T23:56:27.072+0000] {_universal.py:511} INFO - Request URL: 'https://weather12.blob.core.windows.net/daily/daily_weather.csv'
+Request method: 'PUT'
+Request headers:
+    'Content-Length': '122027'
+    'x-ms-blob-type': 'REDACTED'
+    'x-ms-version': 'REDACTED'
+    'Content-Type': 'application/octet-stream'
+    'Accept': 'application/xml'
+    'User-Agent': 'azsdk-python-storage-blob/12.19.0 Python/3.11.8 (Linux-6.4.16-linuxkit-x86_64-with-glibc2.36)'
+    'x-ms-date': 'REDACTED'
+    'x-ms-client-request-id': 'af9cbd26-50b9-11f1-81b8-0242ac1f0005'
+    'Authorization': 'REDACTED'
+A body is sent with the request
+[2026-05-15T23:56:29.312+0000] {_universal.py:550} INFO - Response status: 201
+Response headers:
+    'Content-Length': '0'
+    'Content-MD5': 'REDACTED'
+    'Last-Modified': 'Fri, 15 May 2026 23:56:29 GMT'
+    'ETag': '"0x8DEB2DD954217C4"'
+    'x-ms-request-id': '09b1445b-e01e-00c4-7ac6-e438fd000000'
+    'x-ms-client-request-id': 'af9cbd26-50b9-11f1-81b8-0242ac1f0005'
+    'x-ms-version': 'REDACTED'
+    'x-ms-content-crc64': 'REDACTED'
+    'x-ms-request-server-encrypted': 'REDACTED'
+    'Date': 'Fri, 15 May 2026 23:56:29 GMT'
+[2026-05-15T23:56:29.319+0000] {logging_mixin.py:188} INFO - Uploaded to Azure Blob: daily/daily_weather.csv
+[2026-05-15T23:56:29.436+0000] {python.py:201} INFO - Done. Returned value was: None
+[2026-05-15T23:56:29.578+0000] {taskinstance.py:1138} INFO - Marking task as SUCCESS. dag_id=canada_weather_pipeline, task_id=api_request, execution_date=20260514T050000, start_date=20260515T235518, end_date=20260515T235629
+[2026-05-15T23:56:30.256+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 0
+[2026-05-15T23:56:30.882+0000] {taskinstance.py:3280} INFO - 0 downstream tasks scheduled from follow-on schedule check
